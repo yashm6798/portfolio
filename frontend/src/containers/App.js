@@ -4,9 +4,7 @@ import Profile from '../components/Profile/Profile'
 import Articles from '../components/Articles/Articles'
 import WorkExperiences from '../components/WorkExperiences/WorkExperiences'
 import Projects from '../components/Projects/Projects'
-import articles from '../components/Articles/Articles';
-import workExperiences from '../components/WorkExperiences/WorkExperiences';
-import projects from '../components/Projects/Projects';
+import axios from "axios";
 
 class App extends Component {
 
@@ -14,8 +12,53 @@ class App extends Component {
     profileView : true,
     articleView : false,
     workExperienceView : false,
-    projectView : false
+    projectView : false,
+    profile : [],
+    projects : [],
+    articles : [],
+    workExperiences : []
   }
+
+  componentDidMount() {
+    this.refreshPage();
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevState.articleView !== this.state.articleView || prevState.workExperienceView !== this.state.workExperienceView || prevState.projectView !== this.state.projectView || prevState.profileView !== this.state.profileView){
+      this.refreshPage()
+    }
+  }
+
+  refreshPage = () => {
+
+    if (this.state.profileView) {
+      axios
+        .get("/api/profile/")
+        .then((res) => this.setState({ profile: res.data[0] }))
+        .catch((err) => console.log(err));
+    }
+
+    else if (this.state.articleView) {
+      axios
+        .get("/api/articles/")
+        .then((res) => this.setState({ articles: res.data }))
+        .catch((err) => console.log(err));
+    }
+
+    else if (this.state.workExperienceView) {
+      axios
+        .get("/api/work-experience/")
+        .then((res) => this.setState({ workExperiences: res.data }))
+        .catch((err) => console.log(err));
+    }
+
+    else if (this.state.projectView) {
+      axios
+        .get("/api/projects/")
+        .then((res) => this.setState({ projects: res.data }))
+        .catch((err) => console.log(err));
+    }
+  };
 
   viewArticleHandler = () => {
     this.setState( {
@@ -24,6 +67,7 @@ class App extends Component {
       workExperienceView : false,
       projectView : false
     })
+
   }
 
   vieWorkExperienceHandler = () => {
@@ -54,7 +98,6 @@ class App extends Component {
   }
 
   render(){
-
     let profile = null
     let articles = null
     let projects = null
@@ -63,28 +106,26 @@ class App extends Component {
       profile = <Profile 
               viewArticles = {this.viewArticleHandler}
               viewWorkExperience = {this.vieWorkExperienceHandler}
-              viewProjects = {this.viewProjectHandler}/>
+              viewProjects = {this.viewProjectHandler}
+              profile = {this.state.profile}/>
     }
     else if (this.state.articleView){
-      const tempArticles = ['a', 'b']
       articles = <Articles 
-              articles = {tempArticles}
+              articles = {this.state.articles}
               viewWorkExperience = {this.vieWorkExperienceHandler}
               viewProjects = {this.viewProjectHandler}
               viewProfile = {this.viewProfileHandler}/>
     }
     else if (this.state.workExperienceView){
-      const tempWorkExperiences = ['a', 'b']
       workExperiences = <WorkExperiences 
-              workExperiences = {tempWorkExperiences} 
+              workExperiences = {this.state.workExperiences} 
               viewArticles = {this.viewArticleHandler}
               viewProjects = {this.viewProjectHandler}
               viewProfile = {this.viewProfileHandler}/>
     }
     else if (this.state.projectView){
-      const tempProjects = ['a', 'b']
       projects = <Projects 
-              projects = {tempProjects} 
+              projects = {this.state.projects} 
               viewArticles = {this.viewArticleHandler}
               viewWorkExperience = {this.vieWorkExperienceHandler}
               viewProfile = {this.viewProfileHandler}/>
