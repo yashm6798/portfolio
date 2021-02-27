@@ -24,7 +24,7 @@ class WorkExperienceSerializer(serializers.ModelSerializer):
         fields = ['title', 'from_date', 'to_date', 'description', 'organization']
 
 class ArticleSerializer(serializers.ModelSerializer):
-    img_url = serializers.URLField(source="img_url")
+    image_url = serializers.URLField(source="img_url")
     class Meta:
         model = Article
-        fields = ['title', 'date', 'content', 'img_url']
+        fields = ['title', 'date', 'content', 'image_url']

@@ -15,7 +15,7 @@ class WorkExperience(models.Model):
     from_date = models.DateField()
     to_date = models.DateField()
     description = models.TextField()
-    organization = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.title + ", " + self.organization
@@ -25,7 +25,7 @@ class Project(models.Model):
     from_date = models.DateField()
     to_date = models.DateField()
     description = models.TextField()
-    organization = models.CharField(max_length=100)
+    organization = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return self.title + ", " + self.organization
@@ -34,7 +34,7 @@ class Article(models.Model):
     title = models.CharField(max_length=50)
     date = models.DateField()
     content = models.TextField()
-    image = models.ImageField(upload_to='article_images', blank=True)
+    image = models.ImageField(upload_to='static/images/article_images', blank=True)
 
     def __str__(self):
         return self.title
