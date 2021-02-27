@@ -6,24 +6,38 @@ class Profile(models.Model):
     bio = models.TextField(blank=True)
     location = models.CharField(max_length=30, blank=True)
     birth_date = models.DateField(null=True, blank=True)
-    profile_picture = models.ImageField(upload_to='profile_pictures')
 
-    def _str_(self):
+    def __str__(self):
         return (self.user.first_name + self.user.last_name)
+
+class WorkExperience(models.Model):
+    title = models.CharField(max_length=50)
+    from_date = models.DateField()
+    to_date = models.DateField()
+    description = models.TextField()
+    organization = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.title + ", " + self.organization
 
 class Project(models.Model):
     title = models.TextField(max_length=500)
     from_date = models.DateField()
     to_date = models.DateField()
     description = models.TextField()
+    organization = models.CharField(max_length=100)
 
-    def _str_(self):
-        return self.title
+    def __str__(self):
+        return self.title + ", " + self.organization
 
-class Articles(models.Model):
+class Article(models.Model):
     title = models.CharField(max_length=50)
     date = models.DateField()
     content = models.TextField()
+    image = models.ImageField(upload_to='article_images', blank=True)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
+
+    def img_url(self):
+        return self.image.url
