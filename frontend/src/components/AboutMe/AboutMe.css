@@ -1,0 +1,58 @@
+.aboutMeContainer{
+    overflow: hidden;
+}
+.aboutMe{
+    padding-top: 3%;
+    color: linen;
+    overflow: hidden;
+}
+
+.aboutMe .photo {
+    float: right;
+    margin-right: 5%;
+    margin-top: 5%;
+    width: 20%;
+}
+
+.aboutMe img {
+    width: 100%;
+    border: 10px solid grey;
+    border-radius: 20%;
+}
+
+.aboutMe .text {
+    float: left;
+    margin-left: 5%;
+    margin-top: 5%;
+    width: 50%;
+    text-align: left;
+    padding-left: 2%;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.aboutMe .text h2 {
+    font-size: 30px;
+    font-family: copperplate;
+}
+
+.aboutMe .bio {
+    font-size: 30px;
+}
+
+.aboutMeContainer .educations {
+    width: 60%;
+    margin-left: 5%;
+    margin-top: 5%;
+    text-align: left;
+    padding-left: 2%;
+    margin-right: 5%;
+}
+
+.aboutMeContainer .contact {
+    margin-left: 5%;
+    margin-top: 5%;
+    text-align: left;
+    padding-left: 2%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+}

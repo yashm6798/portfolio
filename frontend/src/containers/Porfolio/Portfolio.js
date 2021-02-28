@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
 import Articles from '../../components/Articles/Articles';
 import WorkExperiences from '../../components/WorkExperiences/WorkExperiences';
+import AboutMe from '../../components/AboutMe/AboutMe';
+import Educations from '../../components/Educations/Educations'
 import Projects from '../../components/Projects/Projects';
 import axios from "axios";
 import { Switch, Route, Link } from "react-router-dom";
@@ -10,11 +12,12 @@ import './portfolio.css'
 class Portfolio extends Component {
 
     state = {
-        tabs: { "home": true, "projects": false, "workExperience": false, "articles": false },
+        tabs: { "home": true, "projects": false, "workExperience": false, "articles": false, "aboutMe": false },
         profile: [],
         projects: [],
         articles: [],
-        workExperiences: []
+        workExperiences: [],
+        education: []
     }
 
     componentDidMount() {
@@ -48,24 +51,33 @@ class Portfolio extends Component {
             .get("/api/projects/")
             .then((res) => this.setState({ projects: res.data }))
             .catch((err) => console.log(err));
+
+        axios
+            .get("/api/education/")
+            .then((res) => this.setState({ education: res.data }))
+            .catch((err) => console.log(err));
     };
 
     switchTab = (tabName) => {
         if (tabName === "home") {
             this.setState(
-                { tabs: { "home": true, "projects": false, "workExperience": false, "articles": false } });
+                { tabs: { "home": true, "projects": false, "workExperience": false, "articles": false, "aboutMe": false } });
         }
         else if (tabName === "projects") {
             this.setState(
-                { tabs: { "home": false, "projects": true, "workExperience": false, "articles": false } });
+                { tabs: { "home": false, "projects": true, "workExperience": false, "articles": false, "aboutMe": false } });
         }
         else if (tabName === "workExperience") {
             this.setState(
-                { tabs: { "home": false, "projects": false, "workExperience": true, "articles": false } });
+                { tabs: { "home": false, "projects": false, "workExperience": true, "articles": false, "aboutMe": false } });
         }
         else if (tabName === "articles") {
             this.setState(
-                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": true } });
+                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": true, "aboutMe": false } });
+        }
+        else if (tabName === "aboutMe") {
+            this.setState(
+                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": false, "aboutMe": true } });
         }
     }
 
@@ -85,6 +97,9 @@ class Portfolio extends Component {
                             <Link className={this.state.tabs.articles ? "active" : null} onClick={() => this.switchTab('articles')} to="/articles">Articles</Link>
                         </li>
                         <li>
+                            <Link className={this.state.tabs.aboutMe ? "active" : null} onClick={() => this.switchTab('aboutMe')} to="/aboutMe">About Me</Link>
+                        </li>
+                        <li>
                             <Link className={this.state.tabs.home ? "active" : null} onClick={() => this.switchTab('home')} id="home_name" to="/">Yash Mehta</Link>
                         </li>
                     </ul>
@@ -96,6 +111,14 @@ class Portfolio extends Component {
 
                             <Profile
                                 profile={this.state.profile} />
+
+                        </Route>
+
+                        <Route exact path="/aboutMe">
+
+                            <AboutMe
+                                profile={this.state.profile} 
+                                education={this.state.education}/>
 
                         </Route>
 

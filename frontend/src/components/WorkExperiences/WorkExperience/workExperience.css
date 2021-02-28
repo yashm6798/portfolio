@@ -1,0 +1,28 @@
+.workExperience {
+    overflow: hidden;  
+    background-color: whitesmoke;
+}
+
+.workExperience .workExperienceDetails {
+    color: black;
+    margin : 5px 5px;
+    width: 99.3%;
+    border: solid black;
+}
+
+#work_title{
+    text-align: left;
+    padding-left: 5%;
+}
+
+#work_duration {
+    text-align: right;
+}
+
+#work_description {
+    text-align: left;
+}
+
+.workExperience .workExperienceDetails th {
+    border-bottom: solid black;
+}
