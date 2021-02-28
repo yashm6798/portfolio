@@ -27,4 +27,4 @@ class ArticleSerializer(serializers.ModelSerializer):
     image_url = serializers.URLField(source="img_url")
     class Meta:
         model = Article
-        fields = ['title', 'date', 'content', 'image_url']
+        fields = ['id', 'title', 'date', 'link', 'image_url', 'introduction']

@@ -32,12 +32,10 @@ class Project(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=50)
+    introduction = models.TextField(blank=True)
     date = models.DateField()
-    content = models.TextField()
+    link = models.URLField(blank=True)
     image = models.ImageField(upload_to='static/images/article_images', blank=True)
 
-    def __str__(self):
-        return self.title
-
     def img_url(self):
-        return self.image.url
+        return self.image.name

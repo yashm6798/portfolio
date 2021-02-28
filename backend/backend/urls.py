@@ -26,5 +26,6 @@ router.register(r'work-experience', views.WorkExperienceView, 'work-experience')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('get-img/<int:id>', views.ImageView),
     path('api/', include(router.urls)),
 ]

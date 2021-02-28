@@ -1,10 +1,21 @@
 import React from 'react';
+import './Article.css'
 
 const article = (props) => {
+    const img_url = "http://localhost:8000/get-img/".concat(props.article.id)
     return (
         <div className='article'>
-            <h2>This is a single article!</h2>
+            <div className='photo'>
+                <img src={img_url} alt=""></img>
+            </div>
+            <div className='text'>
+                <div className='title'>
+                    <h2>{props.article.title}</h2>
+                </div>
+                <div className='article_content' dangerouslySetInnerHTML={{ __html: props.article.introduction }}></div>
+            </div>
         </div>
+
     )
 }
 

@@ -1,0 +1,33 @@
+.article {
+    max-width: 100%;
+    margin-left: 2%;
+    max-height: 240px;
+    overflow: hidden;
+    background-color: whitesmoke;
+    color: black;
+    margin: 5px 5px;
+}
+
+
+.article .photo {
+    float: left;
+    width: 30%;
+    height: auto;
+}
+
+.article img {
+    max-width: 100%;
+    height: auto;
+}
+
+.article .text {
+    float: right;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    width: 68%;
+}
+
+.article .text h2 {
+    font-size: 25px;
+    font-family: copperplate;
+}

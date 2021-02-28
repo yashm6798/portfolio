@@ -1,0 +1,65 @@
+ .topnav {
+     padding-top: 2%;
+     padding-bottom: 2%;
+     background-color: transparent;
+     overflow: hidden;
+  }
+
+.topnav ul{
+    list-style: none;
+    padding-inline-start: 0;
+    margin: 0;
+    padding: 0;
+    margin-right: 5%;
+}
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    font-family: 'Courier New', Courier, monospace;
+    float: right;
+    color: linen;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+
+  .topnav #home_name{
+      float: left;
+      font-size: 25px !important;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    text-decoration: underline;
+    text-underline-position: under;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active{
+    text-decoration: underline;
+    text-underline-position: under;
+}
+
+  .page-content{
+    width: 100%;
+    height: 100%;
+  }
+
+  .portfolio {
+    width: 100%;
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .container_title h2 {
+    font-size: 30px;
+    font-family: copperplate;
+}
+
+.topic_container {
+  border: white solid;
+}

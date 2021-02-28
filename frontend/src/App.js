@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react';
-import Portfolio from './Porfolio/Portfolio';
+import Portfolio from './containers/Porfolio/Portfolio';
 import { BrowserRouter } from 'react-router-dom';
 
 class App extends Component {
