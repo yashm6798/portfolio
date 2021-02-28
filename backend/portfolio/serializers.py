@@ -16,12 +16,12 @@ class ProfileSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ['title', 'from_date', 'to_date', 'description', 'organization']
+        fields = ['id', 'title', 'from_date', 'to_date', 'description', 'organization']
 
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkExperience
-        fields = ['title', 'from_date', 'to_date', 'description', 'organization']
+        fields = ['id', 'title', 'from_date', 'to_date', 'description', 'organization']
 
 class ArticleSerializer(serializers.ModelSerializer):
     image_url = serializers.URLField(source="img_url")

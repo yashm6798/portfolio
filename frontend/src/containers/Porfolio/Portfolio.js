@@ -102,19 +102,25 @@ class Portfolio extends Component {
                         <Route path="/articles">
 
                             <div className="container">
+
                                 <div className="container_title">
                                     <h2>My Articles</h2>
                                     <p>Here are some articles I have written about privacy. Click to read the full article. I welcome any suggestions you have for a new article.</p>
                                 </div>
+
                                 <div className="topic_container">
-                                <Articles
-                                    articles={this.state.articles} />
+                                    <Articles
+                                        articles={this.state.articles} />
                                 </div>
                             </div>
 
                         </Route>
 
                         <Route path="/workExperience">
+
+                            <div className="container_title">
+                                <h2>Professional Experience</h2>
+                            </div>
 
                             <div className="container">
                                 <WorkExperiences
@@ -124,6 +130,11 @@ class Portfolio extends Component {
                         </Route>
 
                         <Route path="/projects">
+
+                            <div className="container_title">
+                                <h2>My Projects</h2>
+                                <p>Here are some projects I have worked on. Feel free to contact me for any additional information on these.</p>
+                            </div>
 
                             <div className="container">
                                 <Projects
