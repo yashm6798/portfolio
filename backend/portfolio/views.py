@@ -4,9 +4,8 @@ from .serializers import ProfileSerializer, ProjectSerializer, ArticleSerializer
 from .models import Profile, Project, Article, WorkExperience, Education
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from django.conf import settings
 from PIL import Image
-from backend.settings import STATIC_URL
-import os
 
 class ProfileView(viewsets.ModelViewSet):
     serializer_class = ProfileSerializer
@@ -18,7 +17,7 @@ class ArticleView(viewsets.ModelViewSet):
 
 class WorkExperienceView(viewsets.ModelViewSet):
     serializer_class = WorkExperienceSerializer
-    queryset = WorkExperience.objects.all().order_by('-to_date')
+    queryset = WorkExperience.objects.all()
 
 class ProjectView(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
@@ -34,3 +33,7 @@ def ImageView(request, id):
     img = Image.open(article.image)
     img.save(response,'png')
     return response
+
+def HomeView(request):
+    context = {}
+    return render(request, 'build/index.html', context)

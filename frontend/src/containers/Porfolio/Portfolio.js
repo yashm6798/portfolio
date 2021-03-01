@@ -3,7 +3,6 @@ import Profile from '../../components/Profile/Profile';
 import Articles from '../../components/Articles/Articles';
 import WorkExperiences from '../../components/WorkExperiences/WorkExperiences';
 import AboutMe from '../../components/AboutMe/AboutMe';
-import Educations from '../../components/Educations/Educations'
 import Projects from '../../components/Projects/Projects';
 import axios from "axios";
 import { Switch, Route, Link } from "react-router-dom";
@@ -22,9 +21,9 @@ class Portfolio extends Component {
 
     componentDidMount() {
         this.refreshPage();
-        const path = window.location.pathname
-        const activeTab = path.slice(1, path.length)
-        this.switchTab(activeTab)
+        const path = window.location.pathname;
+        const activeTab = path.slice(1, path.length);
+        this.switchTab(activeTab);
     }
 
     refreshPage = () => {

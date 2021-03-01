@@ -3,7 +3,7 @@
 }
 .aboutMe{
     padding-top: 3%;
-    color: linen;
+    color: black;
     overflow: hidden;
 }
 
@@ -16,7 +16,7 @@
 
 .aboutMe img {
     width: 100%;
-    border: 10px solid grey;
+    border: 10px solid black;
     border-radius: 20%;
 }
 
@@ -30,7 +30,7 @@
     font-family: 'Courier New', Courier, monospace;
 }
 
-.aboutMe .text h2 {
+.aboutMeContainer h2 {
     font-size: 30px;
     font-family: copperplate;
 }
@@ -46,6 +46,7 @@
     text-align: left;
     padding-left: 2%;
     margin-right: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .aboutMeContainer .contact {
@@ -55,4 +56,5 @@
     padding-left: 2%;
     margin-right: 5%;
     margin-bottom: 5%;
+    font-family: 'Courier New', Courier, monospace;
 }

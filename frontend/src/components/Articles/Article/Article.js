@@ -15,7 +15,6 @@ const article = (props) => {
                 <div className='article_content' dangerouslySetInnerHTML={{ __html: props.article.introduction }}></div>
             </div>
         </div>
-
     )
 }
 
