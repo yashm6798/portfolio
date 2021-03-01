@@ -27,6 +27,7 @@ router.register(r'education', views.EducationView, 'education')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.HomeView),
     path('get-img/<int:id>', views.ImageView),
     path('api/', include(router.urls)),
 ]

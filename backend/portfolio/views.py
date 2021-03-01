@@ -33,3 +33,7 @@ def ImageView(request, id):
     img = Image.open(article.image)
     img.save(response,'png')
     return response
+
+def HomeView(request):
+    context = {}
+    return render(request, 'index.html', context)
