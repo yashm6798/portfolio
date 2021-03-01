@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from portfolio import views
+from django.conf.urls import url
 
 router = routers.DefaultRouter()
 router.register(r'profile', views.ProfileView, 'profile')
@@ -29,4 +30,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('get-img/<int:id>', views.ImageView),
     path('api/', include(router.urls)),
+    url(r'^(?P<path>.*)$', views.index),
 ]
