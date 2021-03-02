@@ -29,7 +29,7 @@ const aboutMe = (props) => {
                 <h2>Contact Me</h2>
                 <ul>
                     {user ? <li>Email: {user.email}</li> : null}
-                    <li>LinkedIn: <a href={props.profile.contact_info}>{props.profile.contact_info}</a></li>
+                    <li>LinkedIn: <a href = {props.profile.contact_info}>{props.profile.contact_info}</a></li>
                 </ul>
             </div>
         </div>

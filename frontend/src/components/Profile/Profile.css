@@ -1,36 +1,75 @@
-.profile{
-    padding-top: 3%;
-    color: black;
+@media only screen and (min-width: 1224px) {
+    .profile{
+        padding-top: 3%;
+        color: black;
+    }
+
+    .profile .photo {
+        float: right;
+        margin-right: 5%;
+        margin-top: 5%;
+        width: 30%;
+    }
+
+    .profile img {
+        width: 100%;
+        border: 10px solid black;
+        border-radius: 20%;
+    }
+
+    .profile .text {
+        float: left;
+        margin-left: 5%;
+        margin-top: 7%;
+        width: 50%;
+        text-align: left;
+        padding-left: 2%;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .profile .text h1 {
+        font-size: 50px;
+        font-family: copperplate;
+    }
+
+    .profile .bio {
+        font-size: 30px;
+    }
+
 }
 
-.profile .photo {
-    float: right;
-    margin-right: 5%;
-    margin-top: 5%;
-    width: 30%;
+@media only screen and (max-width: 1224px) {
+    .profile{
+        padding-top: 3%;
+        color: black;
+    }
+
+    .profile .photo {
+        width: 30%;
+        margin: auto;
+    }
+
+    .profile img {
+        width: 100%;
+        border: 10px solid black;
+        border-radius: 20%;
+    }
+
+    .profile .text {
+        margin: auto;
+        width: 80%;
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .profile .text h1 {
+        font-size: 40px;
+        font-family: copperplate;
+    }
+
+    .profile .bio {
+        font-size: 20px;
+    }
+
 }
 
-.profile img {
-    width: 100%;
-    border: 10px solid black;
-    border-radius: 20%;
-}
-
-.profile .text {
-    float: left;
-    margin-left: 5%;
-    margin-top: 7%;
-    width: 50%;
-    text-align: left;
-    padding-left: 2%;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-.profile .text h1 {
-    font-size: 50px;
-    font-family: copperplate;
-}
-
-.profile .bio {
-    font-size: 30px;
-}

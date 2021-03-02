@@ -2,7 +2,6 @@ import React from 'react';
 import './Article.css'
 
 const article = (props) => {
-    const img_url = "http://localhost:8000/get-img/".concat(props.article.id)
     return (
         <div className='article'>
             <div className='photo'>

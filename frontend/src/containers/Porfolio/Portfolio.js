@@ -83,8 +83,8 @@ class Portfolio extends Component {
     render() {
         return (
             <div className="portfolio">
+                <Link className={this.state.tabs.home ? "active" : null} onClick={() => this.switchTab('home')} id="home_name_mobile" to="/">Yash Mehta</Link>
                 <div className="topnav">
-
                     <ul>
                         <li>
                             <Link className={this.state.tabs.projects ? "active" : null} onClick={() => this.switchTab('projects')} to="/projects">Projects</Link>
@@ -116,8 +116,8 @@ class Portfolio extends Component {
                         <Route exact path="/aboutMe">
 
                             <AboutMe
-                                profile={this.state.profile} 
-                                education={this.state.education}/>
+                                profile={this.state.profile}
+                                education={this.state.education} />
 
                         </Route>
 
