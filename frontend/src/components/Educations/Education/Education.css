@@ -9,10 +9,13 @@
 
 #education_organization{
     text-align: left;
+    vertical-align: top;
 }
 
 #education_duration {
     text-align: right;
+    width: auto;
+    vertical-align: top;
 }
 
 #education_courses {
