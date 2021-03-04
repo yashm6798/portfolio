@@ -14,7 +14,8 @@ class aboutMe extends Component {
             anchors: ['About-Me', 'Education', 'Work-Experience'],
             scrollBar: false,
             navigation: true,
-            verticalAlign: false
+            verticalAlign: false,
+            scrollOverflow: true
         }
         const x = window.matchMedia("(min-width: 768px)")
         return (
