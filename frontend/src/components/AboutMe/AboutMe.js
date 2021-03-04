@@ -14,8 +14,7 @@ class aboutMe extends Component {
             anchors: ['About-Me', 'Education', 'Work-Experience'],
             scrollBar: false,
             navigation: true,
-            verticalAlign: false,
-            scrollOverflow: true
+            verticalAlign: false
         }
         const x = window.matchMedia("(min-width: 768px)")
         return (
@@ -23,7 +22,7 @@ class aboutMe extends Component {
                 { x.matches ? (
                     <div className="laptop">
                         <SectionsContainer className="container" {...options}>
-                            <Section color="#062f4f">
+                            <Section scrollBar= "false" color="#062f4f">
                                 <div className="aboutMe">
                                     <div className="photo">
                                         <img src={charlie} alt="Charlie and Me"></img>
@@ -37,14 +36,14 @@ class aboutMe extends Component {
                                 </div>
                             </Section>
 
-                            <Section color="#813772">
+                            <Section scrollBar= "false" color="#813772">
                                 <div className="educations">
                                     <h2>Education</h2>
                                     <Educations education={this.props.education} />
                                 </div>
                             </Section>
 
-                            <Section color="#8b1c00">
+                            <Section scrollBar= "false" color="#8b1c00">
                                 <div className="workExperiences">
                                     <h2>Professional Experience</h2>
                                     <WorkExperiences workExperiences={this.props.workExperience} />
