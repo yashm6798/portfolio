@@ -22,6 +22,7 @@ class WorkExperience(models.Model):
     to_date = models.DateField()
     description = models.TextField()
     organization = models.CharField(max_length=100, blank=True)
+    image = models.ImageField(upload_to='static/images/work_experience_images', blank=True)
 
 class Project(models.Model):
     title = models.TextField(max_length=500)

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
 import Articles from '../../components/Articles/Articles';
-import WorkExperiences from '../../components/WorkExperiences/WorkExperiences';
 import AboutMe from '../../components/AboutMe/AboutMe';
 import Projects from '../../components/Projects/Projects';
+import Contact from '../../components/Contact/Contact'
 import axios from "axios";
 import { Switch, Route, Link } from "react-router-dom";
 import './portfolio.css'
@@ -11,7 +11,7 @@ import './portfolio.css'
 class Portfolio extends Component {
 
     state = {
-        tabs: { "home": true, "projects": false, "workExperience": false, "articles": false, "aboutMe": false },
+        tabs: { "home": true, "projects": false, "articles": false, "aboutMe": false, "contactMe": false },
         profile: [],
         projects: [],
         articles: [],
@@ -60,23 +60,23 @@ class Portfolio extends Component {
     switchTab = (tabName) => {
         if (tabName === "home") {
             this.setState(
-                { tabs: { "home": true, "projects": false, "workExperience": false, "articles": false, "aboutMe": false } });
+                { tabs: { "home": true, "projects": false, "workExperience": false, "articles": false, "aboutMe": false, "contactMe": false } });
         }
         else if (tabName === "projects") {
             this.setState(
-                { tabs: { "home": false, "projects": true, "workExperience": false, "articles": false, "aboutMe": false } });
-        }
-        else if (tabName === "workExperience") {
-            this.setState(
-                { tabs: { "home": false, "projects": false, "workExperience": true, "articles": false, "aboutMe": false } });
+                { tabs: { "home": false, "projects": true, "workExperience": false, "articles": false, "aboutMe": false, "contactMe": false } });
         }
         else if (tabName === "articles") {
             this.setState(
-                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": true, "aboutMe": false } });
+                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": true, "aboutMe": false, "contactMe": false } });
         }
         else if (tabName === "aboutMe") {
             this.setState(
-                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": false, "aboutMe": true } });
+                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": false, "aboutMe": true, "contactMe": false } });
+        }
+        else if (tabName === "contactMe") {
+            this.setState(
+                { tabs: { "home": false, "projects": false, "workExperience": false, "articles": false, "aboutMe": false, "contactMe": true } });
         }
     }
 
@@ -87,10 +87,10 @@ class Portfolio extends Component {
                 <div className="topnav">
                     <ul>
                         <li>
-                            <Link className={this.state.tabs.projects ? "active" : null} onClick={() => this.switchTab('projects')} to="/projects">Projects</Link>
+                            <Link className={this.state.tabs.contactMe ? "active" : null} onClick={() => this.switchTab('contactMe')} to="/contactMe">Contact Me</Link>
                         </li>
                         <li>
-                            <Link className={this.state.tabs.workExperience ? "active" : null} onClick={() => this.switchTab('workExperience')} to="/workExperience">Work Experience</Link>
+                            <Link className={this.state.tabs.projects ? "active" : null} onClick={() => this.switchTab('projects')} to="/projects">Projects</Link>
                         </li>
                         <li>
                             <Link className={this.state.tabs.articles ? "active" : null} onClick={() => this.switchTab('articles')} to="/articles">Articles</Link>
@@ -117,7 +117,8 @@ class Portfolio extends Component {
 
                             <AboutMe
                                 profile={this.state.profile}
-                                education={this.state.education} />
+                                education={this.state.education} 
+                                workExperience={this.state.workExperiences}/>
 
                         </Route>
 
@@ -127,26 +128,13 @@ class Portfolio extends Component {
 
                                 <div className="container_title">
                                     <h2>My Articles</h2>
-                                    <p>Here are some articles I have written about privacy. Click to read the full article. I welcome any suggestions you have for a new article.</p>
+                                    <p>Here are some articles I have written about privacy. I welcome any suggestions you have for a new article.</p>
                                 </div>
 
                                 <div className="topic_container">
                                     <Articles
                                         articles={this.state.articles} />
                                 </div>
-                            </div>
-
-                        </Route>
-
-                        <Route path="/workExperience">
-
-                            <div className="container_title">
-                                <h2>Professional Experience</h2>
-                            </div>
-
-                            <div className="container">
-                                <WorkExperiences
-                                    workExperiences={this.state.workExperiences} />
                             </div>
 
                         </Route>
@@ -158,12 +146,20 @@ class Portfolio extends Component {
                                 <p>Here are some projects I have worked on. Feel free to contact me for any additional information on these.</p>
                             </div>
 
-                            <div className="container">
+                            <div className="projects_container">
                                 <Projects
                                     projects={this.state.projects} />
                             </div>
 
                         </Route>
+
+                        <Route exact path="/contactMe">
+
+                            <Contact
+                                profile={this.state.profile} />
+
+                        </Route>
+
                     </Switch>
                 </div>
             </div>

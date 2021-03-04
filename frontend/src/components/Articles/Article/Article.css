@@ -1,15 +1,15 @@
-@media only screen and (min-width: 1224px){
+@media only screen and (min-width: 768px){
     .article {
-        max-width: 100%;
-        max-height: 240px;
+        margin: auto;
+        padding: 2%;
+        max-width: 80%;
         overflow: hidden;
-        background-color: black;
-        color: whitesmoke;
-        margin: 5px 5px;
+        color: white;
+        position: relative;
     }
     .article .photo {
         float: left;
-        width: 30%;
+        width: 40%;
         height: auto;
     }
 
@@ -20,30 +20,50 @@
     .article .text {
         float: right;
         text-align: left;
-        width: 68%;
+        width: 58%;
     }
 
     .article .text h2 {
+        margin-top: 1%;
         font-size: 25px;
+    }
+
+    .article .text a {
+        color: white;
+        text-underline-position: under;
+    }
+
+    .article #read_more_link {
+        position: absolute;
+        bottom: 12%;
     }
 }
 
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 1024px) {
+    .article #read_more_link {
+        position: relative;
+        margin-top: 10px !important; 
+    }
+}
+
+@media only screen and (max-width: 768px) {
     .article {
         max-width: 100%;
         overflow: hidden;
-        background-color: black;
-        color: whitesmoke;
-        margin: 5px 5px;
+        color: white;
+        margin: 15px;
+        padding: 15px;
+        font-size: 15px;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .article #read_more_link {
+        margin-top: 10px;
     }
     
     .article a{
-        text-decoration: none;
-    }
-    .article .photo {
-        margin: auto;
-        margin-top: 10px;
-        max-width: 50%;
+        color: white;
+        text-underline-position: under;
     }
 
     .article img {
@@ -53,7 +73,8 @@
     
     .article .text {
         text-align: left;
-        margin: 10px;
+        margin: 5px;
+        margin-bottom: 15px;
     }
     
     .article .text h2 {

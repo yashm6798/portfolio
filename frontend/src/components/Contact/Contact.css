@@ -1,0 +1,20 @@
+.contact {
+    margin: 5%;
+    text-align: left;
+    padding-left: 2%;
+    font-size: 18px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.contact a {
+    color: white;
+    text-underline-position: under;
+}
+
+.contact li {
+    padding: 1%;
+}
+@media only screen and (max-width: 768px) {
+    .contact {
+        font-size: 12px !important;
+    }
+}

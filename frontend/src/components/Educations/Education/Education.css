@@ -1,4 +1,4 @@
-@media only screen and (min-width: 1224px){
+@media only screen and (min-width: 768px){
 
     .educationDetailsMobile{
         display: none;
@@ -20,8 +20,9 @@
 
     #education_duration {
         text-align: right;
-        width: 202px;
+        padding-left: 40px;
         vertical-align: top;
+        width: 230px;
     }
 
     #education_courses {
@@ -37,7 +38,7 @@
     }
 }
 
-@media only screen and (max-width: 1224px){
+@media only screen and (max-width: 768px){
     .education table{
         display: none;
     }

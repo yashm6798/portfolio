@@ -10,7 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
 class EducationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Education
-        fields = ['university', 'gpa', 'from_date', 'to_date', 'courses', 'city']
+        fields = ['university', 'gpa', 'from_date', 'to_date', 'courses', 'city', 'id']
 
 class ProfileSerializer(serializers.ModelSerializer):
     user = UserSerializer()
@@ -26,7 +26,7 @@ class ProjectSerializer(serializers.ModelSerializer):
 class WorkExperienceSerializer(serializers.ModelSerializer):
     class Meta:
         model = WorkExperience
-        fields = ['id', 'title', 'from_date', 'to_date', 'description', 'organization']
+        fields = ['id', 'title', 'from_date', 'to_date', 'description', 'organization', 'image']
 
 class ArticleSerializer(serializers.ModelSerializer):
     class Meta:

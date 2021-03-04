@@ -1,8 +1,14 @@
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 768px) {
+
+  .projects_container {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
   .topnav {
-      padding-top: 2%;
-      padding-bottom: 2%;
-      background-color: transparent;
+      padding-top: 0.5%;
+      padding-bottom: 0.5%;
+      background-color: black;
       overflow: hidden;
     }
 
@@ -18,17 +24,22 @@
     .topnav a {
       font-family: 'Courier New', Courier, monospace;
       float: right;
-      color: black;
+      color: white;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
       font-size: 20px;
+      font-weight: bold;
     }
 
     .portfolio #home_name_mobile{
         display: none;
-        font-size: 25px !important;
     }
+
+    .topnav #home_name{
+      font-size: 30px !important;
+      float: left;
+  }
     
     /* Change the color of links on hover */
     .topnav a:hover {
@@ -62,12 +73,16 @@
   }
 }
 
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 768px) {
   .topnav {
     padding-top: 2%;
     padding-bottom: 2%;
     background-color: transparent;
     overflow: hidden;
+    background-color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 38px;
   }
 
   .topnav ul {
@@ -86,50 +101,62 @@
   /* Style the links inside the navigation bar */
   .topnav a {
     font-family: 'Courier New', Courier, monospace;
-    color: black;
+    color: white;
     text-align: center;
-    padding: 10px 10px;
+    padding: 10px;
     text-decoration: none;
     font-size: 12px;
   }
 
   .topnav #home_name{
       display: none;
-      font-size: 25px !important;
   }
 
   .portfolio #home_name_mobile, .portfolio #home_name_mobile a{
-    color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
     display: block;
     font-size: 25px !important;
     padding-inline-start: 0;
     margin: 0;
-    padding: 0;
+    padding: 0.5%;
+    padding-top: 2%;
     text-decoration: none;
+    background-color: black;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
 }
   
   /* Add a color to the active/current link */
   .topnav a.active, .active #home_name_mobile{
     text-decoration: underline;
     text-underline-position: under;
-}
-
-  .page-content{
-    width: 100%;
-    height: 100%;
   }
 
-  .portfolio {
-    width: 100%;
-    height: 100%;
-  }
+    .page-content{
+      width: 100%;
+      height: 100%;
+    }
 
-  .container {
-    height: 100%;
-  }
+    .page-content .container{
+      height: 100%;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 5px;
+    }
 
-  .container_title h2 {
-    font-size: 30px;
-    font-family: copperplate;
-}
+    .page-content .container .container_title {
+      width: 90%;
+      margin: auto;
+    }
+
+    .portfolio {
+      width: 100%;
+      height: 100%;
+    }
+
+    .container_title h2 {
+      font-size: 30px;
+      font-family: copperplate;
+    }
 }

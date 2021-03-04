@@ -1,17 +1,23 @@
-@media only screen and (min-width: 1224px) {
+@media only screen and (min-width: 768px) {
+
+    .mobile {
+        display: none;
+    }
+
     .aboutMeContainer{
         overflow: hidden;
+        font-size: large;
     }
     .aboutMe{
-        padding-top: 3%;
-        color: black;
+        margin-top: 8%;
+        color: white;
         overflow: hidden;
     }
 
     .aboutMe .photo {
         float: right;
-        margin-right: 5%;
-        margin-top: 5%;
+        margin-top: 3%;
+        margin-right: 7%;
         width: 20%;
     }
 
@@ -24,7 +30,6 @@
     .aboutMe .text {
         float: left;
         margin-left: 5%;
-        margin-top: 5%;
         width: 50%;
         text-align: left;
         padding-left: 2%;
@@ -36,12 +41,8 @@
         font-family: copperplate;
     }
 
-    .aboutMe .bio {
-        font-size: 30px;
-    }
-
     .aboutMeContainer .educations {
-        width: 60%;
+        width: 70%;
         margin-left: 5%;
         margin-top: 5%;
         text-align: left;
@@ -50,27 +51,39 @@
         font-family: 'Courier New', Courier, monospace;
     }
 
-    .aboutMeContainer .contact {
-        margin: 5%;
+    .aboutMeContainer .workExperiences {
+        margin-left: 2%;
         text-align: left;
         padding-left: 2%;
+        margin-right: 5%;
         font-family: 'Courier New', Courier, monospace;
     }
+
+    .aboutMeContainer .workExperiences h2{
+        margin-top: 2%;
+        margin-bottom: 0;
+    }
+
 }
 
-@media only screen and (max-width: 1224px) {
+@media only screen and (max-width: 768px) {
     .aboutMeContainer{
         overflow: hidden;
     }
+
+    .laptop {
+        display: none;
+    }
     .aboutMe{
-        padding-top: 3%;
-        color: black;
+        color: white;
         overflow: hidden;
+        font-size: 13px;
     }
 
     .aboutMe .photo {
         width: 30%;
         margin: auto;
+        margin-top: 2%;
     }
 
     .aboutMe img {
@@ -81,14 +94,14 @@
 
     .aboutMe .text {
         margin: auto;
-        width: 80%;
+        width: 90%;
         text-align: left;
         padding-left: 2%;
         font-family: 'Courier New', Courier, monospace;
     }
 
     .aboutMeContainer h2 {
-        font-size: 30px;
+        font-size: 20px;
         text-align: center;
         font-family: copperplate;
     }
@@ -101,23 +114,19 @@
         width: 90%;
         font-size: 15px;
         margin: auto;
-        margin-top: 5%;
+        margin-top: 15%;
         text-align: left;
         padding-left: 2%;
         font-family: 'Courier New', Courier, monospace;
     }
 
-    .aboutMeContainer .contact {
-        margin-left: 5%;
-        margin-top: 5%;
+    .aboutMeContainer .workExperiences {
+        width: 90%;
+        font-size: 15px;
+        margin: auto;
+        margin-top: 15%;
         text-align: left;
         padding-left: 2%;
-        margin-right: 5%;
-        margin-bottom: 5%;
         font-family: 'Courier New', Courier, monospace;
-    }
-    
-    .aboutMeContainer .contact a {
-        font-size: 10px;
     }
 }
