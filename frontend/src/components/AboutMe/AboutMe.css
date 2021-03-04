@@ -9,7 +9,7 @@
         font-size: large;
     }
     .aboutMe{
-        margin-top: 8%;
+        margin-top: 2%;
         color: white;
         overflow: hidden;
     }
@@ -61,7 +61,7 @@
 
     .aboutMeContainer .workExperiences h2{
         margin-top: 2%;
-        margin-bottom: 0;
+        margin-bottom: 2%;
     }
 
 }
